@@ -1,0 +1,12 @@
+WORKER 0001:
+--------------------------------------------------------------------------------------------------
+Worker Name: Henro
+Worker Surname: Vd Linden
+Gender: m
+DOB: 2000-10-02
+Age: 25
+Date started working on Farm: 2016-04-13
+Number of years in service: 10
+Type of Worker: General
+Wage:300.0
+
