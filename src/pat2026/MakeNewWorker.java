@@ -13,7 +13,7 @@ public class MakeNewWorker {
     // Direct Worker Details
     private WorkerCode code = new WorkerCode(); // Unigue worker code
     
-    private String workerName, workerSurname, workerType;
+    private String workerCode, workerName, workerSurname, workerType, wageString;
     private int age, numOfYears;
     private char gender;
     private double wage;
@@ -32,6 +32,7 @@ public class MakeNewWorker {
     
     
     public MakeNewWorker() throws IOException {
+        workerCode = code.getWorkerCode();
         workerName = JOptionPane.showInputDialog("What is the worker's name?");
         workerSurname = JOptionPane.showInputDialog("What is the worker's surname?");
         
@@ -58,12 +59,13 @@ public class MakeNewWorker {
         workerType = JOptionPane.showInputDialog("What is the worker's type?");
         
         wage = Double.parseDouble(JOptionPane.showInputDialog("Give Worker Wage"));
+        wageString = String.format("%.2f", wage);
         
         
         
         PrintWriter workerDetails = new PrintWriter(new FileWriter("WorkerDetails.txt", true));
         
-        workerDetails.println(toString());
+        workerDetails.println(DetailsDisplay());
         
         workerDetails.close();
         
@@ -128,11 +130,11 @@ public class MakeNewWorker {
         this.dayStart = dayStart;
     }
 
-    public String toString() {
-        return "WORKER 0001:\n--------------------------------------------------------------------------------------------------\n"
+    public String DetailsDisplay() {
+        return "WORKER CODE: " + workerCode + "\n--------------------------------------------------------------------------------------------------\n"
                 + "Worker Name: " + workerName + "\nWorker Surname: " + workerSurname  + "\nGender: " + gender  
                 + "\nDOB: " + DOB + "\nAge: " + age + "\nDate started working on Farm: " + startWork + "\nNumber of years in service: " + numOfYears + "\nType of Worker: " + workerType
-                + "\nWage:" + wage + "\n";
+                + "\nWage:" + wageString + "\n";
     }
     
     
