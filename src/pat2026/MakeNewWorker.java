@@ -11,9 +11,10 @@ import javax.swing.JOptionPane;
 
 public class MakeNewWorker {
     // Direct Worker Details
-    private WorkerCode code = new WorkerCode(); // Unigue worker code
+    private WorkerCode code = new WorkerCode(); // Unique worker code
     
-    private String workerCode, workerName, workerSurname, workerType, wageString;
+    private String workerCode, workerName, workerSurname, workerType, workerRole, group, wageString;
+    private String[] typesOfWorkers = {"Seasonal" , "Permanent"};
     private int age, numOfYears;
     private char gender;
     private double wage;
@@ -33,6 +34,7 @@ public class MakeNewWorker {
     
     public MakeNewWorker() throws IOException {
         workerCode = code.getWorkerCode();
+        
         workerName = JOptionPane.showInputDialog("What is the worker's name?");
         workerSurname = JOptionPane.showInputDialog("What is the worker's surname?");
         
@@ -56,7 +58,16 @@ public class MakeNewWorker {
         diffWork = Period.between(startWork, dateNow);
         numOfYears = diffWork.getYears();
         
-        workerType = JOptionPane.showInputDialog("What is the worker's type?");
+        // I asked Gemini to help me code this menu
+        workerType = (String) JOptionPane.showInputDialog(null, "What is the worker's type?", "Worker Type.", JOptionPane.QUESTION_MESSAGE, null, typesOfWorkers, "Permanent");
+        
+        if (workerType == null) {
+            System.exit(0);
+        }
+                
+        workerRole = JOptionPane.showInputDialog("What is the worker's Role?");
+        
+        group = JOptionPane.showInputDialog("To what group does the worker belong?");
         
         wage = Double.parseDouble(JOptionPane.showInputDialog("Give Worker Wage"));
         wageString = String.format("%.2f", wage);
@@ -70,10 +81,8 @@ public class MakeNewWorker {
         workerDetails.close();
         
     }
-    
-    
-    
-    // Setting of the alues needed
+
+    // Setting of the values needed
     public void setWorkerName(String workerName) {
         this.workerName = workerName;
     }
@@ -84,18 +93,8 @@ public class MakeNewWorker {
     }
 
 
-    public void setWorkerType(String workerType) {
-        this.workerType = workerType;
-    }
-
-
     public void setGender(char gender) {
         this.gender = gender;
-    }
-
-
-    public void setWage(double wage) {
-        this.wage = wage;
     }
 
     public void setDOB(LocalDate DOB) {
@@ -129,12 +128,29 @@ public class MakeNewWorker {
     public void setDayStart(int dayStart) {
         this.dayStart = dayStart;
     }
+    
+    
+    public void setWorkerType(String workerType) {
+        this.workerType = workerType;
+    }
+    
+    public void setWorkerRole(String workerRole) {
+        this.workerRole = workerRole;
+    }
+    
+    public void setGroup(String group) {
+        this.group = group;
+    }
+        
+    public void setWage(double wage) {
+        this.wage = wage;
+    }
 
     public String DetailsDisplay() {
         return "WORKER CODE: " + workerCode + "\n--------------------------------------------------------------------------------------------------\n"
                 + "Worker Name: " + workerName + "\nWorker Surname: " + workerSurname  + "\nGender: " + gender  
-                + "\nDOB: " + DOB + "\nAge: " + age + "\nDate started working on Farm: " + startWork + "\nNumber of years in service: " + numOfYears + "\nType of Worker: " + workerType
-                + "\nWage:" + wageString + "\n";
+                + "\nDOB: " + DOB + "\nAge: " + age + "\nDate started working on Farm: " + startWork + "\nNumber of years in service: " + numOfYears
+                + "\nType of worker: " + workerType + "\nRole of worker: " + workerRole + "\nGroup: " + group + "\nWage:" + wageString + "\n";
     }
     
     

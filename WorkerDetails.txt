@@ -1,12 +1,40 @@
-WORKER CODE: WAR003
+WORKER CODE: GEN006
+--------------------------------------------------------------------------------------------------
+Worker Name: Grobler
+Worker Surname: Ettienne
+Gender: m
+DOB: 2000-01-01
+Age: 26
+Date started working on Farm: 2018-10-09
+Number of years in service: 7
+Type of Worker: General
+Group: 
+Wage:20,00
+
+WORKER CODE: PIC007
+--------------------------------------------------------------------------------------------------
+Worker Name: Rudy
+Worker Surname: van Rooyen
+Gender: f
+DOB: 2001-03-03
+Age: 25
+Date started working on Farm: 2020-04-23
+Number of years in service: 6
+Type of Worker: General
+Group: C
+Wage:300,00
+
+WORKER CODE: PIC009
 --------------------------------------------------------------------------------------------------
 Worker Name: Droez
 Worker Surname: Jambowski
-Gender: f
-DOB: 2000-10-15
-Age: 25
-Date started working on Farm: 2016-01-20
-Number of years in service: 10
-Type of Worker: Warehouse
-Wage:50,00
+Gender: m
+DOB: 2000-01-01
+Age: 26
+Date started working on Farm: 2020-02-02
+Number of years in service: 6
+Type of worker: Seasonal
+Role of worker: Picker
+Group: C
+Wage:30,00
 

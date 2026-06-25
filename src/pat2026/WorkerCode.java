@@ -16,8 +16,8 @@ public class WorkerCode {
     // Data for generating code
     private int codeNum;
     private int lastNum;
-    private String[] typesOfWorkers = {"MAN", "GEN", "PIC", "PLU", "WAR"};
-    private String codeNumString, codeWorkerType;
+    private String[] rolesOfWorkers = {"MAN", "GEN", "PIC", "PLU", "WAR"};
+    private String codeNumString, codeWorkerRole;
     
     
     public WorkerCode() throws IOException {        
@@ -32,7 +32,6 @@ public class WorkerCode {
             String num = code.substring(3, 6);
             lastNum = Integer.parseInt(num);
             }
-            
             scLine.close();
         }
         
@@ -42,12 +41,13 @@ public class WorkerCode {
         codeNumString = String.format("%03d", codeNum);
         
         // I asked Gemini to help me code this menu
-        codeWorkerType = (String) JOptionPane.showInputDialog(null, "What is the worker's type?", "Worker Type.", JOptionPane.QUESTION_MESSAGE, null, typesOfWorkers, "GEN");
+        codeWorkerRole = (String) JOptionPane.showInputDialog(null, "What is the worker's role?", "Worker Role.", JOptionPane.QUESTION_MESSAGE, null, rolesOfWorkers, "GEN");
         
-        if (codeWorkerType == null) {
+        if (codeWorkerRole == null) {
             System.exit(0);
         }
-        workerCode = codeWorkerType + codeNumString;
+        
+        workerCode = codeWorkerRole + codeNumString;
         
         PrintWriter genCode = new PrintWriter(new FileWriter("WorkerCodes.txt", true));
         
