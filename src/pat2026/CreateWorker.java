@@ -7,13 +7,14 @@ import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.Period;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public class MakeNewWorker {
+public class CreateWorker {
     // Direct Worker Details
-    private WorkerCode code = new WorkerCode(); // Unique worker code
+    private WorkerLoginDetails code = new WorkerLoginDetails(); // Unique worker code
     
-    private String workerCode, workerName, workerSurname, workerType, workerRole, group, wageString;
+    private String workerCode, workerPassword, workerName, workerSurname, workerType, workerRole, group, wageString;
     private String[] typesOfWorkers = {"Seasonal" , "Permanent"};
     private int age, numOfYears;
     private char gender;
@@ -28,12 +29,18 @@ public class MakeNewWorker {
     private int yearDOB, monthDOB, dayDOB; //Details for DOB
     private int yearStart, monthStart, dayStart; //Details for startWork
     
+    
     private Period diffAge;
     private Period diffWork;
     
     
-    public MakeNewWorker() throws IOException {
-        workerCode = code.getWorkerCode();
+    public CreateWorker() throws IOException {
+        Scanner scanCode = new Scanner(code.getWorkerCode()).useDelimiter(",");
+        
+        workerCode = scanCode.next();
+        workerPassword = scanCode.next();
+        
+        scanCode.close();
         
         workerName = JOptionPane.showInputDialog("What is the worker's name?");
         workerSurname = JOptionPane.showInputDialog("What is the worker's surname?");
@@ -147,10 +154,15 @@ public class MakeNewWorker {
     }
 
     public String DetailsDisplay() {
-        return "WORKER CODE: " + workerCode + "\n--------------------------------------------------------------------------------------------------\n"
+        return "WORKER CODE: " + workerCode + "\t(Password: " + workerPassword + ")\n--------------------------------------------------------------------------------------------------\n"
                 + "Worker Name: " + workerName + "\nWorker Surname: " + workerSurname  + "\nGender: " + gender  
                 + "\nDOB: " + DOB + "\nAge: " + age + "\nDate started working on Farm: " + startWork + "\nNumber of years in service: " + numOfYears
                 + "\nType of worker: " + workerType + "\nRole of worker: " + workerRole + "\nGroup: " + group + "\nWage:" + wageString + "\n";
+    }
+    
+    
+    public static void main(String args[]) throws IOException {
+        CreateWorker hello = new CreateWorker();
     }
     
     

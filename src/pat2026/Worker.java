@@ -18,6 +18,56 @@ public class Worker {
         this.group = group;
         this.wage = wage;
     }
+
+    public String getWorkerCode() {
+        return workerCode;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public String getDateStarted() {
+        return dateStarted;
+    }
+
+    public String getServiceYears() {
+        return serviceYears;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public String getWage() {
+        return wage;
+    }
+    
+    
         
     
     
