@@ -81,9 +81,11 @@ public class GetWorkerWorkdays {
 
     // Turns "6 hour(s) 0 minute(s)" back into a Duration
     private Duration toDuration(String text) {
-        long hours = Long.parseLong(text.substring(0, text.indexOf(" hour")).trim());
-        long minutes = Long.parseLong(text.substring(text.indexOf(")") + 1, text.indexOf(" minute")).trim());
+        
+        int hours = Integer.parseInt(text.substring(0, text.indexOf(" hour")).trim());
+        int minutes = Integer.parseInt(text.substring(text.indexOf(")") + 1, text.indexOf(" minute")).trim());
         return Duration.ofHours(hours).plusMinutes(minutes);
+        
     }
 
     public Workday[] getWorkdays() {

@@ -568,7 +568,7 @@ public class WorkerHome extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnEditInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditInfoActionPerformed
-        EditWorkerInfo editWorker = new EditWorkerInfo(this, true, worker.getWorkerCode());
+        ViewEditWorkerInfo editWorker = new ViewEditWorkerInfo(this, true, worker.getWorkerCode());
         editWorker.setVisible(true); // modal: the code below runs after the dialog closes
     }//GEN-LAST:event_btnEditInfoActionPerformed
 

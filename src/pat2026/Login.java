@@ -53,11 +53,19 @@ public class Login {
         return loginSuccessful;
     }
 
-    // New: does everything — check login, fetch worker, open WorkerHome, close current frame
+    // Checks login, then sends managers to ManagerHome and workers to WorkerHome
     public void attemptLogin(JFrame currentFrame) {
         if (!checkLogin()) {
             JOptionPane.showMessageDialog(currentFrame, "Invalid worker code or password.", "Login Failed", JOptionPane.ERROR_MESSAGE);
             return;
+        }
+
+        // NEW: a code containing "MAN" is a manager, so open the manager screen
+        if (enteredCode.toUpperCase().contains("MAN")) {
+            ManagerHome managerHome = new ManagerHome();
+            managerHome.setVisible(true);
+            currentFrame.dispose();
+            return; // stop here, managers do not need a worker profile
         }
 
         try {

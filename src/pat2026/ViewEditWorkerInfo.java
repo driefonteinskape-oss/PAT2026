@@ -10,11 +10,11 @@ import java.time.DateTimeException;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public class EditWorkerInfo extends javax.swing.JDialog {
+public class ViewEditWorkerInfo extends javax.swing.JDialog {
 
     private String workerCode;
 
-    public EditWorkerInfo(java.awt.Frame parent, boolean modal, String workerCode) {
+    public ViewEditWorkerInfo(java.awt.Frame parent, boolean modal, String workerCode) {
         super(parent, modal);
         this.workerCode = workerCode;
         initComponents();
