@@ -120,29 +120,8 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_passfUserActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        String code = txtfCode.getText();
-    String password = new String(passfUser.getPassword());
-
-    Login login = new Login(code, password);
-
-    if (login.checkLogin()) {
-        try {
-            GetWorkerDetails details = new GetWorkerDetails();
-            boolean found = details.getWorkerData(login.getEnteredCode());
-
-            if (found) {
-                Worker loggedInWorker = details.getEmployee();
-                // later: pass loggedInWorker into your profile JFrame
-                // new ProfileFrame(loggedInWorker).setVisible(true);
-                // this.dispose();
-            } else {
-                JOptionPane.showMessageDialog(this, "Login worked, but no matching profile was found in WorkerDetails.txt.");
-            }
-
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "Error reading worker details.");
-        }
-    }
+        Login login = new Login(txtfCode.getText(), new String(passfUser.getPassword()));
+        login.attemptLogin(this);
     }//GEN-LAST:event_btnLoginActionPerformed
 
     /**

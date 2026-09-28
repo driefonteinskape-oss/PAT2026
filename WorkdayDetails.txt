@@ -1,0 +1,12 @@
+JobID: #0001	Worker Code: GEN001
+--------------------------------------------------------------------------------------------------
+Date Worked: 2026-09-26
+Start Time: 10:11
+End Time: 16:22
+Lunch Start: 12:11
+Lunch End: 12:22
+Lunch Duration: 0 hour(s) 11 minute(s)
+Hours Worked (excl. lunch): 6 hour(s) 0 minute(s)
+Type of Work: Harvesting
+Rows Completed: 10
+

@@ -94,11 +94,5 @@ public class WorkerLoginDetails {
         return workerCode + "," + workerPassword;
     }
     
-    public static void main(String args[]) throws IOException {
-        WorkerLoginDetails hello = new WorkerLoginDetails();
-    }
-    
-    
-    
         
 }

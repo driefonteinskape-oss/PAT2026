@@ -1,10 +1,13 @@
 package pat2026;
 
 public class Worker {
-        
-    String workerCode, name, surname, gender, dob, age, dateStarted, serviceYears, role, type, group, wage;
 
-    public Worker(String workerCode, String name, String surname, String gender, String dob, String age, String dateStarted, String serviceYears, String role, String type, String group, String wage) {
+    String workerCode, name, surname, gender, dob, age, dateStarted,
+            serviceYears, role, type, group, wage, status;
+
+    public Worker(String workerCode, String name, String surname, String gender,
+            String dob, String age, String dateStarted, String serviceYears,
+            String role, String type, String group, String wage, String status) {
         this.workerCode = workerCode;
         this.name = name;
         this.surname = surname;
@@ -17,60 +20,58 @@ public class Worker {
         this.type = type;
         this.group = group;
         this.wage = wage;
+        this.status = status;
     }
 
     public String getWorkerCode() {
-        return workerCode;
+        return workerCode; 
     }
-
+    
     public String getName() {
-        return name;
+        return name; 
     }
-
+    
     public String getSurname() {
-        return surname;
+        return surname; 
     }
-
+    
     public String getGender() {
-        return gender;
+        return gender; 
     }
-
+    
     public String getDob() {
-        return dob;
+        return dob; 
     }
-
+    
     public String getAge() {
-        return age;
+        return age; 
     }
-
+    
     public String getDateStarted() {
-        return dateStarted;
+        return dateStarted; 
     }
-
+    
     public String getServiceYears() {
-        return serviceYears;
+        return serviceYears; 
     }
-
+    
     public String getRole() {
-        return role;
+        return role; 
     }
-
+    
     public String getType() {
-        return type;
+        return type; 
     }
-
+    
     public String getGroup() {
-        return group;
+        return group; 
     }
-
+    
     public String getWage() {
-        return wage;
+        return wage; 
     }
     
-    
-        
-    
-    
-    
-    
+    public String getStatus() {
+        return status; 
+    }
 }

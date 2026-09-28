@@ -1,40 +1,28 @@
-WORKER CODE: GEN006
+WORKER CODE: PIC003	(Password: #003)
 --------------------------------------------------------------------------------------------------
-Worker Name: Grobler
-Worker Surname: Ettienne
+Worker Name: he
+Worker Surname: he
 Gender: m
-DOB: 2000-01-01
-Age: 26
-Date started working on Farm: 2018-10-09
-Number of years in service: 7
-Type of Worker: General
-Group: 
+DOB: 2000-10-01
+Age: 25
+Date started working on Farm: 2010-12-23
+Number of years in service: 15
+Type of worker: Item 1
+Role of worker: Item 1
+Group: a
 Wage:20,00
 
-WORKER CODE: PIC007
+WORKER CODE: MAN004	(Password: #004)
 --------------------------------------------------------------------------------------------------
-Worker Name: Rudy
-Worker Surname: van Rooyen
-Gender: f
-DOB: 2001-03-03
-Age: 25
-Date started working on Farm: 2020-04-23
-Number of years in service: 6
-Type of Worker: General
-Group: C
-Wage:300,00
-
-WORKER CODE: PIC009
---------------------------------------------------------------------------------------------------
-Worker Name: Droez
-Worker Surname: Jambowski
+Worker Name: hi
+Worker Surname: sa
 Gender: m
-DOB: 2000-01-01
-Age: 26
-Date started working on Farm: 2020-02-02
-Number of years in service: 6
-Type of worker: Seasonal
-Role of worker: Picker
-Group: C
+DOB: 2003-12-03
+Age: 22
+Date started working on Farm: 2015-10-23
+Number of years in service: 10
+Type of worker: Permanent
+Role of worker: appy
+Group: b
 Wage:30,00
 

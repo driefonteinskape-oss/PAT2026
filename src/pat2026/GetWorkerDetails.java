@@ -9,7 +9,7 @@ public class GetWorkerDetails {
 
     private Worker employee;
     private String workerCode, password, name, surname, gender, dob, age,
-            dateStarted, serviceYears, role, type, group, wage;
+            dateStarted, serviceYears, role, type, group, wage, status;
 
     public GetWorkerDetails() throws IOException {
     }
@@ -64,15 +64,17 @@ public class GetWorkerDetails {
 
         String lineOfWage = scFile.nextLine();
         wage = lineOfWage.substring(lineOfWage.indexOf(":") + 1).trim();
+        
+        String lineOfStatus = scFile.nextLine();
+        status = lineOfStatus.substring(lineOfStatus.indexOf(":") + 1).trim();
 
         if (workerCode.equalsIgnoreCase(codeToFind)) {
             employee = new Worker(workerCode, name, surname, gender, dob, age,
-                    dateStarted, serviceYears, role, type, group, wage);
+                    dateStarted, serviceYears, role, type, group, wage, status);
             found = true;
             break;
         }
-        // if this record wasn't a match, the loop naturally moves to
-        // the blank line next, which isBlank() will skip at the top
+        
     }
 
     scFile.close();

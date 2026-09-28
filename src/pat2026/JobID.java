@@ -21,21 +21,7 @@ public class JobID {
 
     }
 
-    /* Delete if do not know:
-        public int getNum() throws FileNotFoundException {
-        
-        Scanner scFile = new Scanner(new File("WorkerCodes.txt"));
 
-            while (scFile.hasNextLine()) {
-                Scanner scLine = new Scanner(scFile.nextLine());
-                num =  Integer.parseInt(scLine.next().substring(3, 6));
-                scLine.close();
-            }
-            
-            scFile.close();
-        return num;
-    }
-     */
     private void genJobID() throws IOException {
         Scanner scFile = new Scanner(new File("JobID.txt"));
 

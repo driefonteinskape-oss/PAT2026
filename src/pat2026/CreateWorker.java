@@ -14,11 +14,12 @@ public class CreateWorker {
     // Direct Worker Details
     private WorkerLoginDetails code = new WorkerLoginDetails(); // Unique worker code
     
-    private String workerCode, workerPassword, workerName, workerSurname, workerType, workerRole, group, wageString;
+    private String workerCode, workerPassword, workerName, workerSurname, workerType, workerRole, group, wageString, statusString;
     private String[] typesOfWorkers = {"Seasonal" , "Permanent"};
     private int age, numOfYears;
     private char gender;
     private double wage;
+    private boolean status;
     
     private LocalDate DOB;
     private LocalDate startWork; //Date worker started working on farm
@@ -78,6 +79,14 @@ public class CreateWorker {
         
         wage = Double.parseDouble(JOptionPane.showInputDialog("Give Worker Wage"));
         wageString = String.format("%.2f", wage);
+        
+        status = true;
+        
+        if (status == true) {
+            statusString = "Active";
+        } else {
+            statusString = "Inactive";
+        }
         
         
         
@@ -157,7 +166,7 @@ public class CreateWorker {
         return "WORKER CODE: " + workerCode + "\t(Password: " + workerPassword + ")\n--------------------------------------------------------------------------------------------------\n"
                 + "Worker Name: " + workerName + "\nWorker Surname: " + workerSurname  + "\nGender: " + gender  
                 + "\nDOB: " + DOB + "\nAge: " + age + "\nDate started working on Farm: " + startWork + "\nNumber of years in service: " + numOfYears
-                + "\nType of worker: " + workerType + "\nRole of worker: " + workerRole + "\nGroup: " + group + "\nWage:" + wageString + "\n";
+                + "\nType of worker: " + workerType + "\nRole of worker: " + workerRole + "\nGroup: " + group + "\nWage:" + wageString + "\nStatus: " + statusString + "\n";
     }
     
     
